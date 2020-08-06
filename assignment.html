@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>FOODY MOODY</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 500 20px Lato, sans-serif;
+      line-height: 1.5;
+      color: black;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: black;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: black;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #c5d2d9;
+      color:##c5d2d9;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #c5d2d9;
+  }
+  .logo-small {
+      color: #c5d2d9;
+      font-size: 50px;
+  }
+  .logo {
+      color: #c5d2d9;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #c5d2d9;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #c5d2d9;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #c5d2d9; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid#c5d2d9;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"></a>
+	  <left><img src="foodymoody.jpg" class="img-circle" alt="foodymoody" width="200" height="200"> </left>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+                <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+		<li><a href="#order now">ORDER NOW</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Foody Moody</h1> 
+  <p>We Are Food Provider ! ! !</p> 
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Subscribe</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Us</h2><br>
+      <p>Numerous a food business 
+visionary, started their food realms in their home kitchens. For individuals gifted in 
+cooking and preparing, beginning organizations in their home kitchens may sound simple 
+enough, since they as of now have the hardware and fixings expected to dispatch. In any case, 
+claiming a locally situated food business has its difficulties, including legitimate prerequisites <br>
+and costs, which make a few business visionaries wonder in the case of selling food from home is justified, 
+despite all the trouble. We, give top of the line item to our client and offer such a large number of limits in 
+Ramadan, various events, wedding and birthday celebrations. <br><br>
+
+We offer end of the week advancements moreover. <br></p>
+
+ <h2>Our Values</h2>
+      <h4> We are  committed to provide quality food at our customers door step. We strive to provide quality services on time, based on best practices for the satisfaction of our customer.</h4>
+      <p><VISION:we are working to establish a social impact by creating employment for both unemployed male and female who are kin to be self-employed</p>    </div>
+  </div>
+      
+<div class="container">
+  <h2>SPECIALITIES</H2>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="dhokla.jpeg"target="blank">
+          <img src="dhokla.jpeg"alt="Lights" style="width:50%">
+          <div class="caption">
+            <p>Dhokla is a vegetarian culinary dish that is found mainly in the Indian state of Gujarat and parts of adjacent states. It is made with a fermented batter derived from rice and split chickpeas. Dhokla can be eaten for breakfast, as a main course, as a side dish, or as a snack.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="shami.jpeg" target="_blank">
+          <img src="shami.jpeg" alt="Nature" class="img-circle"style="width:100%">
+          <div class="caption">
+            <p>Shaami kabab is a popular local variety of kebab from the Indian subcontinent. It is part of the Pakistani, Punjabi, Indian, and Bangladeshi cuisines.They are also served along with sheer khurma during Eid celebrations.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="samosa.jpeg" target="_blank">
+          <img src="samosa.jpeg" alt="Fjords" class="img-circle"style="width:100%">
+          <div class="caption">
+            <p>chicken samosa is a traditional item which is consumed mostly at tea time. It is also served in weddings and parties. is a fried or baked pastry with a savoury filling, such as spiced potatoes, onions, peas, cheese, beef and other meats, or lentils. ...
+The samosa originated in the Middle East and Central Asia.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Price List</h2>
+  </div>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Dhokla</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Rs. 350</strong> Khamman Dhokla</p>
+          <p><strong>Rs. 370</strong> Rava Dhokla</p>
+          <p><strong>Rs. 250</strong> Normal Dhokla</p>
+          <p><strong>Rs. 370</strong> Palak Dhokla </p
+        </div>       
+          <button class="btn btn-lg">Order Now</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Frozen Items</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Rs. 200</strong> Chicken Samosa</p>
+          <p><strong>Rs. 400</strong> Chicken Kofta</p>
+          <p><strong>Rs. 350</strong> Chicken Shami Kabab</p>
+          <p><strong>Rs. 400</strong> Beef Shami Kabab</p>
+          <p><strong>Rs. 350</strong> Chicken Mayo Roll</p>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-lg">Order Now</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Extras</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>Rs. 60</strong> Puri</p>
+          <p><strong>Ra. 60</strong>Paratha </p>
+          <p><strong>Rs. 270</strong> Friend Onion 500 grams </p>
+        </div>
+        <div class="panel-footer">
+          
+          <button class="btn btn-lg">Order now</button>
+        </div>
+      </div>      
+    </div>    
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Karachi, Pakistan </p>
+      <p><span class="glyphicon glyphicon-phone"></span> 021 03332656541 , 03342074709 </p>
+      <p><span class="glyphicon glyphicon-envelope"></span> khimani.uzma@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="order-now" name="order-now" placeholder="order-now" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+ 
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+  
+  // Slide in elements on scroll
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
